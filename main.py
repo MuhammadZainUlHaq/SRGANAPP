@@ -91,7 +91,7 @@ def convert():
 
 def apprun():
     global app
-    app.run(host='0.0.0.0',debug=True)
+    app.run()
 
 def cleaner():
     global time_tracker
