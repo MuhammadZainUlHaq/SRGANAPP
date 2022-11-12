@@ -1,0 +1,49 @@
+h1{
+color : blue;
+}
+
+p{
+color : red;
+}
+
+div[class = "flex-container"]{
+  display : flex;
+  flex-direction: row;
+}
+
+.flex-container > div[class = "column1"]{
+  margin-left : 5px;
+  margin-right : 5px;
+  margin-top : 30px;
+  width : 50%;
+}
+
+.flex-container > div[class = "column2"]{
+  width : 50%;
+}
+
+img{
+  width : 600px;
+  height : 400px;
+
+}
+
+input{
+  margin-top : 40px;
+  font-size : 25px;
+}
+
+select[id = "upscale"]{
+ font-size : 25px;
+}
+
+input[id = "proceed"]{
+ font-size : 25px;
+ margin-bottom : 35px;
+}
+
+button[id="download"]{
+ font-size : 25px;
+ margin-top : 35px;
+ margin-bottom : 35px;
+}

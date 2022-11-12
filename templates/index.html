@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet", type="text/css", href="{{url_for('static',filename = 'style.css')}}">
+    <meta charset="UTF-8">
+    <title>Z-AIR</title>
+
+</head>
+<body>
+<center><h1>DEEP APP</h1></center>
+<center><h2>Upscale Your Image With Deep Learning</h2></center>
+<hr>
+
+<div class="flex-container">
+
+    <div class="column1">
+        <center>
+        <img src={{image_file | tojson}}>
+            </center>
+    </div>
+    <div class="column2">
+        <center>
+        <form id="form" enctype = 'multipart/form-data' method="post" >
+            <label for="upload"> &nbsp; &nbsp; &nbsp; Select Your Image &nbsp; &nbsp; </label>
+            <input type="file" id="upload" name="client_file">
+            <br><br><br>
+            <label> &nbsp; &nbsp;Upscaling Factor &nbsp; &nbsp; &nbsp;</label>
+            <select id="upscale" name="upscale">
+                <option value="2x"> &nbsp; &nbsp; 2x &nbsp; &nbsp;</option>
+                <option value="3x"> &nbsp; &nbsp; 3x &nbsp; &nbsp;</option>
+                <option value="4x"> &nbsp; &nbsp; 4x &nbsp; &nbsp;</option>
+
+                </select>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp; &nbsp;
+            <br>
+            <label> Change Resolution &nbsp; &nbsp; </label>
+            <input formaction="{{url_for('convert')}}" type="submit" value="Proceed" id="proceed">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp;
+        </form>
+            <hr>
+            <button onclick="location.href='{{ url_for('download') }}'" id="download">DOWNLOAD</button>
+            <br>
+            <p>{{msg}}</p>
+
+        </center>
+    </div>
+
+</div>
+
+<script>
+
+
+    let img_file = {{image_file | tojson}};
+    let bolean = {{disable | tojson}};
+
+    document.getElementById("download").disabled = bolean;
+    console.log(bolean);
+
+</script>
+</body>
+</html>
