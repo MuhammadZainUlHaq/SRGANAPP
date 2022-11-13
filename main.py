@@ -75,8 +75,8 @@ def convert():
                 download_file = 'deep_' + file_name
                 download_path = 'static/user_file/deep' + file_name
 
-                time_tracker[file_name] = [time.time(),time.time()]
-                time_tracker['deep'+file_name] = [time.time(),time.time()]
+                #time_tracker[file_name] = [time.time(),time.time()]
+                #time_tracker['deep'+file_name] = [time.time(),time.time()]
 
                 disable = False
                 msg = " "
@@ -88,7 +88,7 @@ def convert():
     except:
         return "<h1>Sorry, Something Went Wrong. Please Try Again Later<h1>"
 
-
+'''
 def apprun():
     global app
     app.run()
@@ -115,7 +115,7 @@ if __name__ == '__main__':
     t1 = threading.Thread(target=cleaner)
     t1.start()
     apprun()
-
+'''
 
 
 
